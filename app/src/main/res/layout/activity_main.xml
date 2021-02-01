@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/play_parent"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            app:resize_mode="fill"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+        </com.google.android.exoplayer2.ui.PlayerView>
+
+        <RelativeLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="240dp">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:indeterminate="true"
+                android:layout_centerInParent="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+
+            </ProgressBar>
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/edt_manifest_url"
+        android:layout_margin="16dp"
+        android:visibility="visible"
+        android:hint="Manifest URL"
+        android:text="https://media.axprod.net/TestVectors/v7-MultiDRM-SingleKey/Manifest_ClearKey.mpd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/play_parent">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/edt_key_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="visible"
+        android:hint="Key ID"
+        android:text="nrQFDeRLSAKTLifXUIPiZg"
+        app:layout_constraintTop_toBottomOf="@+id/edt_manifest_url"
+        tools:layout_editor_absoluteX="16dp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/edt_key_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="visible"
+        android:hint="Key Value"
+        android:text="FmY0xnWCPCNaSpRG-tUuTQ"
+        app:layout_constraintTop_toBottomOf="@+id/edt_key_id"
+        tools:layout_editor_absoluteX="16dp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="PLAY"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_key_value">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
