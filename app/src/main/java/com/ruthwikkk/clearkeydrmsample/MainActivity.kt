@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity(), Player.EventListener {
         edt_key_id.setText(Constants.SAMPLE_KEY_ID_CLEAR_KEY)
         edt_key_value.setText(Constants.SAMPLE_KEY_VALUE_CLEAR_KEY)
 
+        playVideo(Constants.SAMPLE_MPD_URL_CLEAR_KEY, Constants.SAMPLE_KEY_ID_CLEAR_KEY,Constants.SAMPLE_KEY_VALUE_CLEAR_KEY)
+
         btn_play.setOnClickListener {
             tv_message.text = ""
             if(verifyInput()){
